@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Wrapped inside MaterialCardView for Premium White Card look -->
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <!-- Original ID kept safely on the root inner layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fav_item_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Product Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/picFav"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/turk"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleFav"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:text="@string/title"
+            android:textColor="#1A1A1A"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/innerLayout"
+            app:layout_constraintStart_toEndOf="@+id/picFav"
+            app:layout_constraintTop_toTopOf="@+id/picFav" />
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/priceFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:text="@string/price"
+            android:textColor="#FF7A00"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/picFav"
+            app:layout_constraintStart_toStartOf="@+id/titleFav" />
+
+        <!-- Action Area (Delete Button) -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/picFav"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/picFav">
+
+            <!-- Increased touch target for better UX -->
+            <ImageView
+                android:id="@+id/removeFavBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/favourite_svg"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
